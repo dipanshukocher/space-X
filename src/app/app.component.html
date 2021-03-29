@@ -1,0 +1,14 @@
+<div class="container-main">
+    <h1 class="app-title">SpaceX Launch Programs</h1>
+    <div class="container-main-wrapper"> 
+        <div class="sidebar">
+            <app-side-bar></app-side-bar>
+        </div>
+        <div class="dashboard">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+    <div class="developed-by">
+        <h2 class="">Developed by: <span [innerHTML]="developerName"></span></h2>
+    </div> 
+</div>

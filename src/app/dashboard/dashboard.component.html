@@ -1,0 +1,38 @@
+<div class="dashboard-wrapper">
+    <ul class="spacex-missions">
+        <!-- {{spaceXData | json}} -->
+        <li *ngFor="let data of spaceXData" class="spacex-missions-list">
+            <div class="missions">
+                <div class="mission-image">
+                    <img [src]="data.links.mission_patch_small" alt="{{data.links.mission_patch_small}}">
+                </div>
+                <p class="mission-name">
+                    <span [innerHTML]="data.mission_name"></span> #<span [innerHTML]="data.flight_number"></span>
+                </p>
+                <div class="mission-id">
+                    <span class="label">Mission Ids: </span>
+                    <ul>
+                        <li *ngFor="let mishnId of data.mission_id" class="mission-id-list-item">
+                            <span [innerHTML]="mishnId"></span>
+                        </li>
+                    </ul>
+                </div>
+                <p class="mission-launch-year">
+                    <span class="label">Launch Year: </span>
+                    <span><strong [innerHTML]="data.launch_year"></strong></span>
+                </p>
+                <p class="mission-launch-success">
+                    <span class="label">Successful Launch: </span>
+                    <span [ngClass]="data.launch_success ? 'text-green' : 'text-red'"><strong [innerHTML]="data.launch_success"></strong></span>
+                </p>
+                <p class="mission-landing-success">
+                    <span class="label">Successful Landings: </span>
+                    <span [ngClass]="data.rocket.first_stage.cores[0].land_success ? 'text-green' : 'text-red'"><strong [innerHTML]="data.rocket.first_stage.cores[0].land_success"></strong></span>
+                </p> 
+            </div>
+        </li>
+    </ul>
+    <div *ngIf="spaceXData.length === 0" class="no-data">
+        <h2>NO DATA FOUND FOR CURRENT SELECTION</h2>
+    </div>
+</div>

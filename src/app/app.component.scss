@@ -1,0 +1,101 @@
+$breakpoint-phone: 700px;
+$breakpoint-tablet: 1024px;
+$breakpoint-desktop: 1440px;
+@media (min-width: $breakpoint-desktop) { 
+    .container-main {
+        .developed-by {
+            text-align: center;
+            margin-bottom: 0px;
+            margin-top: 20px;
+            h2 {
+                margin-bottom: 0px;
+            }
+        } 
+        background-color: #f2f2f2;
+        height: auto;
+        width: $breakpoint-desktop;
+        padding: 2%;
+        margin: 0 auto;
+        box-sizing: border-box;
+        .app-title {
+            font-size: 36px;
+            font-weight: bold;
+        }
+        .container-main-wrapper {
+            display: flex;
+            .sidebar {
+                width: 20%;
+            }
+            .dashboard {
+                width: 80%;
+            }
+        }
+    }
+}
+
+@media (min-width: $breakpoint-tablet) and (max-width: $breakpoint-desktop) {
+    .container-main {
+        background-color: #f2f2f2;
+        height: auto;
+        width: 96%;
+        padding: 2%;
+        .app-title {
+            font-size: 36px;
+            font-weight: bold;
+        }
+        .container-main-wrapper {
+            display: flex;
+            .sidebar {
+                width: 20%;
+            }
+            .dashboard {
+                width: 80%;
+            }
+        }
+    }
+}
+
+@media (max-width: $breakpoint-tablet) {
+    .container-main {
+        background-color: #f2f2f2;
+        height: auto;
+        width: 96%;
+        padding: 2%;
+        .app-title {
+            font-size: 36px;
+            font-weight: bold;
+        }
+        .container-main-wrapper {
+            display: flex;
+            .sidebar {
+                width: 20%;
+            }
+            .dashboard {
+                width: 80%;
+            }
+        }
+    }
+}
+
+@media (max-width: $breakpoint-phone) {
+    .container-main {
+        background-color: #f2f2f2;
+        height: auto;
+        width: 92%;
+        padding: 4%;
+        .app-title {
+            font-size: 36px;
+            font-weight: bold;
+        }
+        .container-main-wrapper {
+            display: flex;
+            flex-direction: column;
+            .sidebar {
+                width: 100%;
+            }
+            .dashboard {
+                width: 100%;
+            }
+        }
+    }
+}

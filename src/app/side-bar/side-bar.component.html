@@ -1,0 +1,33 @@
+<div class="filters-wrapper">
+    <h2 class="filter-label">Filters</h2>
+    <h3 class="filter-type-label"><span>Launch year</span></h3>
+    <ul class="launch-years">
+        <li *ngFor="let year of filterYears" class="launch-years-list-item">
+            <div class="filters"> 
+                <button class="filter-button" (click)="selectedfilter(year, 'launch_year'); selectedYr(year)"
+                    [ngClass]="{'active': selectedYear === year}"
+                >{{year}}</button>
+            </div>
+        </li>
+    </ul> 
+
+    <h3 class="filter-type-label"><span>Successful-Launch</span></h3>
+    <ul class="successful-launch">
+        <li *ngFor="let launch of filterTrueFalse" class="successful-launch-list-item">
+            <div class="filters">
+                <button class="filter-button" (click)="selectedfilter(launch.value, 'launch_success'); selectedLaunchSuccess(launch.value)" [ngClass]="{'active': selectedLaunch === launch.value}">{{launch.name}}</button>
+            </div>
+        </li>
+    </ul>
+
+    <h3 class="filter-type-label"><span>Successful Landing</span></h3>
+    <ul class="successful-landing">
+        <li *ngFor="let land of filterTrueFalse" class="successful-launch-list-item">
+            <div class="filters">
+                <button class="filter-button" (click)="selectedfilter(land.value, 'land_success');  selectedLandSuccess(land.value)" [ngClass]="{'active': selectedLand === land.value}">{{land.name}}</button>
+            </div>
+        </li>
+    </ul>
+
+    <a class="clear-button" style="margin-left: 30px;" [routerLink]="['/dashboard', {}]" (click)="selectedYr(null); selectedLaunchSuccess(null); selectedLandSuccess(null)">Clear</a>
+</div>
